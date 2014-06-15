@@ -62,7 +62,7 @@ $(document).ready(function() {
             newstring = str;
         }
         
-        $("#searchSubmit").val(newstring);
+        $("#searchSubmit").attr("value", newstring);
         $("#searchForm")[0].submit();
     });
     
