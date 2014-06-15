@@ -1,6 +1,6 @@
 Ricerca
 =======
-A simple homepage/startpage alternative made with HTML + CSS + jQuery. [[Live Demo (Broken)](http://jackosdev.github.io/Ricerca-Homepage/)]  
+A simple homepage/startpage alternative made with HTML + CSS + jQuery. [[Live Demo](http://jackosdev.github.io/Ricerca-Homepage/)]  
 
 Customization
 -------------
