@@ -73,7 +73,7 @@ function changeProvider(newprovider) {
         currentprovider = newprovider;
         
         $("#searchIcon").fadeOut(450, function() {
-            $("#searchIcon").attr("src", "images/" + currentprovider + ".png");
+            $("#searchIcon").attr("src", "images/" + currentprovider + ".ico");
             $("#searchIcon").fadeIn(450);
         });
     

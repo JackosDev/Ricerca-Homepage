@@ -1,6 +1,6 @@
 Ricerca
 =======
-A simple homepage/startpage alternative made with HTML + CSS + jQuery. [[Live Demo](http://jackosdev.github.io/Ricerca-Homepage/)]  
+A simple homepage/startpage alternative made with HTML + CSS + jQuery. [[Live Demo (Broken)](http://jackosdev.github.io/Ricerca-Homepage/)]  
 
 Customization
 -------------
@@ -31,7 +31,7 @@ Then near the end of the file
 ```
 `Provider Name` must be the same of the one you specified first in `regexSearchProviders`.  
 You might need to replace `http://url.com/search` and `searchvar` to the one corresponding of your search provider, I won't explain how to get those, use Google.  
-To add the corresponding icon, add it to the `images` folder, also with the same name you used for `Provider Name`. The extension of the image *must* be `.PNG`.
+To add the corresponding icon, add it to the `images` folder, also with the same name you used for `Provider Name`. The extension of the image *must* be `.ICO`.
 
 Disclaimer
 ----------
