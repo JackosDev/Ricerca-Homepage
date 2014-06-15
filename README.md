@@ -25,11 +25,12 @@ Then near the end of the file
             (...)
             case "Provider Name":
                 $("#searchForm").attr("action", "http://url.com/search");
-                $("#searchSubmit").attr("name", "text");
+                $("#searchSubmit").attr("name", "searchvar");
                 break;
         }
 ```
 `Provider Name` must be the same of the one you specified first in `regexSearchProviders`.  
+You might need to replace `http://url.com/search` and `searchvar` to the one corresponding of your search provider, I won't explain how to get those, use Google.  
 To add the corresponding icon, add it to the `images` folder, also with the same name you used for `Provider Name`. The extension of the image *must* be `.PNG`.
 
 Disclaimer
