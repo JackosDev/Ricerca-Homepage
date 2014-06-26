@@ -1,6 +1,6 @@
 Ricerca
 =======
-A simple homepage/startpage alternative made with HTML + CSS + jQuery. [[Live Demo](http://jackosdev.github.io/Ricerca-Homepage/)]  
+A search bar alternative that uses commands/bangs. Made with HTML + CSS + jQuery. [[Live Demo](http://jackosdev.github.io/Ricerca-Homepage/)]  
 
 Customization
 -------------
@@ -16,7 +16,7 @@ regexSearchPatterns = [
     "!command" // Provider Name
 ];
 ```
-`Provider Name` and `!command` *must* match (ie. if `Provider Name` is 4th on the list, `!command` also must be 4th).  
+`Provider Name` and `!command` *must* match in order (ie. if `Provider Name` is 4th on the list, `!command` also must be 4th).  
 
 Then near the end of the file
 ```javascript
