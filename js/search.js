@@ -12,8 +12,9 @@ $(document).ready(function() {
         "!w"    // Wikipedia
     ];
 
-    currentprovider = "shit";
-
+    providerCurrent = "none";
+	providerInit = 0;
+	
     // Initialize
     changeProvider("Google");
 
@@ -68,17 +69,17 @@ $(document).ready(function() {
     
 });
 
-function changeProvider(newprovider) {
-    if (newprovider != currentprovider) {
-        currentprovider = newprovider;
-        
-        $("#searchIcon").fadeOut(450, function() {
-            $("#searchIcon").attr("src", "images/" + currentprovider + ".ico");
-            $("#searchIcon").fadeIn(450);
+function changeProvider(providerNew) {
+    if (providerNew != providerCurrent) {
+        providerCurrent = providerNew;
+		if (providerInit == 0) {fadeTime = 0; providerInit = 1;} else {fadeTime = 450;}
+        $("#searchIcon").fadeOut(fadeTime, function() {
+            $("#searchIcon").attr("src", "images/" + providerCurrent + ".ico");
+            $("#searchIcon").fadeIn(fadeTime);
         });
     
         /* Providers */
-        switch(currentprovider) {
+        switch(providerCurrent) {
             case "Google":
                 $("#searchForm").attr("action", "http://google.com/search");
                 $("#searchSubmit").attr("name", "q");
