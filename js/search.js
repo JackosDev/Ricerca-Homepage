@@ -1,3 +1,19 @@
+/*
+ *  Ricerca Homepage
+ *
+ *  A little explanation on how this works:
+ *    The form has 2 inputs: 1) searchInput, where the user writes his query,
+ *    and 2) searchSubmit, a hidden input which contains the cleaned string
+ *    without bangs.
+ *    When processing the form, searchInput is ignored since it contains
+ *    characters unneeded for the user's query and the string stored in
+ *    searchSubmit is finally sent.
+ *
+ *  There may exist better ways for achieving this, but I'm no professional
+ *  coder (sorry for spaghetti code) and it seems to work without problems (at
+ *  least for me).
+ */
+
 $(document).ready(function() {
     /* Search providers list */
     regexSearchProviders = [
@@ -8,7 +24,7 @@ $(document).ready(function() {
 
     regexSearchPatterns = [
         "!g",   // Google
-        "!yt",  // YouTube
+        "!y",   // YouTube
         "!w"    // Wikipedia
     ];
 
@@ -18,18 +34,20 @@ $(document).ready(function() {
     // Initialize
     changeProvider("Google");
 
-    // Build regex string
+    // Build regex string with every search provider. We'll end with something
+    // like (!g)|(!y)|(!w)
     var i = 0;
     while (i < regexSearchPatterns.length) {
         if (i == 0)
-            regexString = "(" + regexSearchPatterns[i] + ")";
+            regexString = "(" + regexSearchPatterns[i] + ")";   // for the first or only provider
         
         if (i > 0)
-            regexString = regexString.concat("|(" + regexSearchPatterns[i] + ")");
+            regexString = regexString.concat("|(" + regexSearchPatterns[i] + ")"); // if there's another provider, add it to the pattern
         
         i += 1;
     }
 
+    // Every time there's a keypress, check for new provider
     $("#searchInput").keypress(function() {
         var str = $(this).val();
         var regexPattern = new RegExp(regexString);
@@ -50,7 +68,7 @@ $(document).ready(function() {
         }
     });
     
-    // On submit form
+    // Submitting the form
     $("#searchForm").submit(function(e) {
         e.preventDefault();
 
@@ -58,7 +76,8 @@ $(document).ready(function() {
         var regexPattern = new RegExp(regexString, "g");
 
         if (regexPattern.test(str)) {
-            newstring = str.replace(regexPattern, "");
+            newstring = str.replace(regexPattern, "");  // clean the string and
+            newstring = newstring.replace(/^(\s)/, ""); // remove first whitespace character (if it's found)
         } else {
             newstring = str;
         }
