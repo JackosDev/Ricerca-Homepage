@@ -4,35 +4,16 @@ A search bar alternative that uses commands/bangs. Made with HTML + CSS + jQuery
 
 Customization
 -------------
-To add your own provider edit `search.js`
+To add your own provider edit `search.js` and follow the examples
 ```javascript
-regexSearchProviders = [
-    (...),
-    "Provider Name"
-];
-
-regexSearchPatterns = [
-    (...),
-    "!command" // Provider Name
+searchProviders_list = [
+    "!command",     "Provider Name",    "http://action.url",                "input_name",
+    "!g",           "Google",           "https://www.google.com/search",    "q"
 ];
 ```
-`Provider Name` and `!command` *must* match in order (ie. if `Provider Name` is 4th on the list, `!command` also must be 4th).  
-
-Then near the end of the file
-```javascript
-        (...)
-        switch(currentprovider) {
-            (...)
-            case "Provider Name":
-                $("#searchForm").attr("action", "http://url.com/search");
-                $("#searchSubmit").attr("name", "searchvar");
-                break;
-        }
-```
-`Provider Name` must be the same of the one you specified first in `regexSearchProviders`.  
-You might need to replace `http://url.com/search` and `searchvar` to the one corresponding of your search provider, I won't explain how to get those, use Google.  
-To add the corresponding icon, add it to the `images` folder, also with the same name you used for `Provider Name`. The extension of the image *must* be `.ICO`.
+  
+To add the corresponding icon, add it to the `images/icons` folder, with the filename being the same as `Provider Name`. The image *must* be a correctly formatted `.ICO`.
 
 Disclaimer
 ----------
-For the icons I used [getFavicon](http://getfavicon.appspot.com/).
+For getting the icons I used [getFavicon](http://getfavicon.appspot.com/). Each image belongs to the corresponding owner and I am in no way affiliated to them.
