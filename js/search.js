@@ -15,26 +15,35 @@
  */
 
 $(document).ready(function() {
-    /* Search providers list */
+    /* -- BEGIN: User Configuration -- */
+
+    // Search providers list
+    // Command, Provider Name,  Form Action,                            Input name,
     searchProviders_list = [
+        "!d",   "DuckDuckGo",   "https://www.duckduckgo.com",           "q",
         "!g",   "Google",       "https://www.google.com/search",        "q",
         "!w",   "Wikipedia",    "http://en.wikipedia.org/w/index.php",  "search",
         "!y",   "YouTube",      "https://www.youtube.com/results",      "search_query"
     ];
 
-    // Start uninitialized
+    // Default provider
+    searchProviders_default = "Google";
+
+    /* -- END: User Configuration -- */
+
+    // Initialize
     g_current_provider = "none";
     g_provider_init = 0;
-    
-    changeProvider("Google");
-    
+
+    changeProvider(searchProviders_default);
+
     // Build regex string with every search provider. We'll end with something
     // like (!g)|(!y)|(!w)
     var i = 0;
     for (i = 0; i < searchProviders_list.length; i += 4) {
         if (i == 0)
             g_regex_list = "(" + searchProviders_list[i] + ")";   // for the first or only provider
-        
+
         if (i > 0)
             g_regex_list = g_regex_list.concat("|(" + searchProviders_list[i] + ")"); // if there's another provider, add it to the pattern
     }
@@ -53,12 +62,12 @@ $(document).ready(function() {
                 }
             }
         } else {
-            changeProvider("Google");
+            changeProvider(searchProviders_default);
         }
     });
-    
-    // Submitting the form
+
     $("#searchForm").submit(function(e) {
+    // Submitting the form, avoiding default behavior
         e.preventDefault();
 
         var user_string = $("#searchInput").val();
@@ -70,11 +79,11 @@ $(document).ready(function() {
         } else {
             new_string = user_string;
         }
-        
+
         $("#searchSubmit").attr("value", new_string);
         $("#searchForm")[0].submit();
     });
-    
+
 });
 
 function changeProvider(new_provider) {

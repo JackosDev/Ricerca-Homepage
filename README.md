@@ -1,18 +1,26 @@
 Ricerca
 =======
-A search bar alternative that uses commands/bangs. Made with HTML + CSS + jQuery. [[Live Demo](http://jackosdev.github.io/Ricerca-Homepage/)]  
+A search bar alternative that uses commands/bangs. Made with HTML + CSS + jQuery. [[Demo #1](http://jackosdev.github.io/Ricerca-Homepage/)][[Demo #2](http://jackosdev.github.io)]
+
 
 Customization
 -------------
-To add your own provider edit `search.js` and follow the examples
+Open `search.js`. You can edit everythings that's inside the `User Configuration` block without fear.  
+You can add search providers _ad infinitum_. Just follow the examples.
 ```javascript
+//  Command,        Provider Name,      Form Action,                        Input name,
 searchProviders_list = [
-    "!command",     "Provider Name",    "http://action.url",                "input_name",
-    "!g",           "Google",           "https://www.google.com/search",    "q"
+"!d",   "DuckDuckGo",   "https://www.duckduckgo.com",           "q",
+"!g",   "Google",       "https://www.google.com/search",        "q",
+"!w",   "Wikipedia",    "http://en.wikipedia.org/w/index.php",  "search",
+"!y",   "YouTube",      "https://www.youtube.com/results",      "search_query"
 ];
+
+// Default provider
+searchProviders_default = "Google";
 ```
-  
-To add the corresponding icon, add it to the `images/icons` folder, with the filename being the same as `Provider Name`. The image *must* be a correctly formatted `.ICO`.
+
+To add the corresponding icon, add it to the `images/icons` folder, with the filename being the same as `Provider Name` and having `.ICO` as format.
 
 Disclaimer
 ----------
