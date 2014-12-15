@@ -1,6 +1,9 @@
 Ricerca
 =======
-A search bar alternative that uses commands/bangs. Made with HTML + CSS + jQuery. [[Demo #1](http://jackosdev.github.io/Ricerca-Homepage/)][[Demo #2](http://jackosdev.github.io)]
+A search bar alternative that uses commands/bangs. Made with HTML + CSS + jQuery.
+
+__Preview:__ [Demo #1](http://jackosdev.github.io/Ricerca-Homepage) - [Demo #2](http://jackosdev.github.io)  
+__Download:__ [Latest](https://github.com/JackosDev/Ricerca-Homepage/archive/master.zip) - [Minimal](https://github.com/JackosDev/Ricerca-Homepage/archive/minimal.zip)
 
 
 Customization
