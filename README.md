@@ -8,17 +8,18 @@ __Download:__ [Latest](https://github.com/JackosDev/Ricerca-Homepage/archive/mas
 
 Customization
 -------------
-Open `search.js`. You can edit everythings that's inside the `User Configuration` block without fear.  
+Open `ricerca.config.js`. Edit everythings that's inside.  
 You can add search providers _ad infinitum_. Just follow the examples.
 ```javascript
-searchProviders_list = [
-  "!d",   "DuckDuckGo",   "https://www.duckduckgo.com",           "q",
-  "!g",   "Google",       "https://www.google.com/search",        "q",
-  "!w",   "Wikipedia",    "http://en.wikipedia.org/w/index.php",  "search",
-  "!y",   "YouTube",      "https://www.youtube.com/results",      "search_query"
+ricercaProvidersList = [
+// Command, Page name,      Form action,                            Input name
+    "!d",   "DuckDuckGo",   "https://www.duckduckgo.com",           "q",
+    "!g",   "Google",       "https://www.google.com/search",        "q",
+    "!w",   "Wikipedia",    "http://en.wikipedia.org/w/index.php",  "search",
+    "!y",   "YouTube",      "https://www.youtube.com/results",      "search_query"
 ];
 
-searchProviders_default = "Google";
+ricercaDefaultProvider = "Google";
 ```
 
 To add the corresponding icon, add it to the `images/icons` folder, with the filename being the same as `Provider Name` and having `.ICO` as format.
